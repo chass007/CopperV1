@@ -94,7 +94,7 @@ def create_role(guild_id,token,role_name,role_color,result_queue):
 	if response.status_code==200:print_message(f"Role '{role_name}' created successfully.")
 	else:print(f"{Fore.BLUE}(-)     Error creating role '{role_name}': {response.status_code}")
 def createroles():
-	global tkn;global svr;name=input(f"{Fore.BLUE}[ + ]     Role name: ");num_roles=get_integer_input(f"{Fore.BLUE}(+)     Enter the number of roles to create: ");num_threads=100;result_queue=queue.Queue();threads=[]
+	global tkn;global svr;name=input(f"{Fore.BLUE}(+)     Role name: ");num_roles=get_integer_input(f"{Fore.BLUE}(+)     Enter the number of roles to create: ");num_threads=100;result_queue=queue.Queue();threads=[]
 	for i in range(num_roles):
 		role_name=name;role_color=16711680;thread=threading.Thread(target=create_role,args=(svr,tkn,role_name,role_color,result_queue));thread.start();threads.append(thread)
 		if len(threads)>=num_threads:
@@ -208,12 +208,11 @@ def menu():
 ascii = """
 
   ____ ___  ____  ____  _____ ____  
- / ___/ _ \|  _ \|  _ \| ____|  _ \         [ FASTEST ON CORD ]
-| |  | | | | |_) | |_) |  _| | |_) |
-| |__| |_| |  __/|  __/| |___|  _ <         [ Dev : chass.dad ]
+ / ___/ _ \|  _ \|  _ \| ____|  _ \      [ .gg/eternalsop ]
+  |  | | | | |_) | |_) |  _| | |_) |
+| |__| |_| |  __/|  __/| |___|  _ < 
  \____\___/|_|   |_|   |_____|_| \_\
-                                    
-                                                                  
+                                                                                                
 
 """
 ascii2 = """
